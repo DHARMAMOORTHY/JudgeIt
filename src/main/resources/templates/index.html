@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JudgeIt | Coding Assessment Platform</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            color: #172033;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h2 {
+            margin: 0;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #596579;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 13px 25px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 20px 8% 70px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            width: 260px;
+            box-shadow: 0 4px 15px #0000000d;
+        }
+
+        .card h3 {
+            color: #1d4ed8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>JudgeIt</h2>
+        <span>Smart Coding Assessment</span>
+    </header>
+
+    <section class="hero">
+        <h1>Code. Test. Improve.</h1>
+        <p>
+            A Java-based coding assessment and explainable grading platform.
+            <br>
+            Practice programming, evaluate solutions, and understand your results.
+        </p>
+        <a class="button" href="#features">Explore Features</a>
+    </section>
+
+    <section class="features" id="features">
+        <div class="card">
+            <h3>Programming Problems</h3>
+            <p>Explore coding challenges and test your problem-solving skills.</p>
+        </div>
+
+        <div class="card">
+            <h3>Automated Evaluation</h3>
+            <p>Evaluate submitted solutions against defined test cases.</p>
+        </div>
+
+        <div class="card">
+            <h3>Explainable Grading</h3>
+            <p>Understand scores through test results and grading evidence.</p>
+        </div>
+    </section>
+
+    <footer>
+        JudgeIt — Academic Coding Assessment Project
+    </footer>
+</body>
+</html>

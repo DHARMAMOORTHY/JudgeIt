@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Problem | JudgeIt</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px 16px;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 30px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #172554;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .error {
+            display: block;
+            margin-top: 6px;
+            color: #dc2626;
+            font-size: 14px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        button, .cancel {
+            padding: 12px 18px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+        }
+
+        .cancel {
+            background: #e5e7eb;
+            color: #1f2937;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Edit Problem</h1>
+        <p>Update the problem details below.</p>
+
+        <form th:action="@{/problems/update/{id}(id=${problem.id})}"
+              th:object="${problem}"
+              method="post">
+
+            <label for="title">Problem Title</label>
+            <input type="text" id="title"
+                   th:field="*{title}" required>
+            <span class="error"
+                  th:if="${#fields.hasErrors('title')}"
+                  th:errors="*{title}"></span>
+
+            <label for="difficulty">Difficulty</label>
+            <select id="difficulty" th:field="*{difficulty}" required>
+                <option value="">Select difficulty</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+            </select>
+            <span class="error"
+                  th:if="${#fields.hasErrors('difficulty')}"
+                  th:errors="*{difficulty}"></span>
+
+            <label for="description">Problem Description</label>
+            <textarea id="description"
+                      th:field="*{description}" required></textarea>
+            <span class="error"
+                  th:if="${#fields.hasErrors('description')}"
+                  th:errors="*{description}"></span>
+
+            <div class="buttons">
+                <button type="submit">Save Changes</button>
+                <a class="cancel" th:href="@{/problems}">Cancel</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
